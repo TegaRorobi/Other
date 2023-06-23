@@ -34,7 +34,6 @@ CSRF_TRUSTED_ORIGINS = []
 EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_ADDRESS = 'rorobitega.work@gmail.com'
-# EMAIL_PASSKEY = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PASSKEY = config('EMAIL_PASSKEY')
 
 
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware" # whitenoise middleware for static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,6 +129,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
