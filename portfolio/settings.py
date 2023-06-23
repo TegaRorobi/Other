@@ -29,10 +29,11 @@ DEBUG = config('DEBUG')
 
 
 ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = []
 
 EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_PORT = 465
-EMAIL_ADDRESS = 'deciphrexx2022@gmail.com'
+EMAIL_ADDRESS = 'rorobitega.work@gmail.com'
 # EMAIL_PASSKEY = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PASSKEY = config('EMAIL_PASSKEY')
 
@@ -126,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 
